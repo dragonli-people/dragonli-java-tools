@@ -11,6 +11,8 @@
 	<artifactId>dragonli-java-tools</artifactId>
 	<packaging>jar</packaging>
 	<name>dragonli-java-tools</name>
+	<version>1.0</version>
+
 	<dependencies>
 		<!--
 		<dependency>
