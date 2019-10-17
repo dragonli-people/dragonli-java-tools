@@ -20,35 +20,37 @@ public interface MetaQConsumerClient {
 	 * 暂停metaQ消费器
 	 * 
 	 */
-	public void suspendConsumer();
+	void suspendConsumer();
 
 	/**
 	 * 继续metaQ消费器
 	 * 
 	 */
-	public void resumeConsumer();
+	void resumeConsumer();
 
 	/**
 	 * 修改metaQ消费线程数
-	 * 
+	 * @param corePoolSize  corePoolSize
 	 */
-	public void updateConsumerCorePoolSize(int corePoolSize);
+	void updateConsumerCorePoolSize(int corePoolSize);
 
 	/**
 	 * 根据msg id 获得metaq 消息
-	 *
+	 * @param msgId 消息id
+	 * @return MessageExt MessageExt
+	 * @throws Exception 异常
 	 */
-	public MessageExt viewMessage(String msgId) throws Exception;
+	MessageExt viewMessage(String msgId) throws Exception;
 
 	/**
 	 * 关闭订阅端
 	 */
-	public void shown();
+	void shown();
 
 	/**
 	 * 开启订阅端
-	 * 
+	 * @throws MQClientException 异常
 	 */
-	public void init() throws MQClientException;
+	void init() throws MQClientException;
 
 }

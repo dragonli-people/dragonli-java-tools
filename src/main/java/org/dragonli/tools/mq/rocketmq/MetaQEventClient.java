@@ -52,7 +52,7 @@ public class MetaQEventClient implements MetaQConsumerClient {
 
 	/**
 	 * metaq consumer内部具有并发能力，并发数可配置，建议应用这边只起一个consumer，利于并发性能调整。
-	 *
+	 * @throws MQClientException MQClientException
 	 */
 	public void init() throws MQClientException {
 		
@@ -121,7 +121,7 @@ public class MetaQEventClient implements MetaQConsumerClient {
 
 	/**
 	 * setConsumerCorePoolSize
-	 * 
+	 * @param consumerCorePoolSize consumerCorePoolSize
 	 */
 	public void setConsumerCorePoolSize(int consumerCorePoolSize) {
 		this.consumerCorePoolSize = consumerCorePoolSize;
@@ -129,7 +129,7 @@ public class MetaQEventClient implements MetaQConsumerClient {
 
 	/**
 	 * setConsumerSuspended
-	 * 
+	 * @param consumerSuspended consumerSuspended
 	 */
 	public void setConsumerSuspended(boolean consumerSuspended) {
 		this.consumerSuspended = consumerSuspended;
