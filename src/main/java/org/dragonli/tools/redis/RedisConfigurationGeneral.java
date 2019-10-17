@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
  * @author liwenyu
  */
 @Component("ServiceRedisConfigurationGeneral")
-@ConditionalOnProperty(value = "service.general.open.redis")
-@ConfigurationProperties("service.general.config.redis")
+@ConditionalOnProperty(value = "service.general.redis-open")
+@ConfigurationProperties("service.general.redis-config")
 public class RedisConfigurationGeneral extends RedisConfiguration {
 
 }

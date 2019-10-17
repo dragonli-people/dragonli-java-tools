@@ -10,11 +10,12 @@ import org.redisson.config.Config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RedisClientBuilder {
 
-	public static RedissonClient buildRedissionClient(RedisConfiguration rc) {
+	public RedissonClient buildRedissionClient(RedisConfiguration rc) {
 		Config config = new Config().setCodec(StringCodec.INSTANCE);
 		if ("single".equals(rc.getMode())) {
 			config.useSingleServer().setAddress(rc.getNodes().get(0));
@@ -30,7 +31,7 @@ public class RedisClientBuilder {
 	}
 
 	@Bean
-	@ConditionalOnProperty(value = "service.general.open.redis")
+	@ConditionalOnProperty(value = "service.general.redis-open")
 	public RedissonClient createRedisClient(@Autowired RedisConfigurationGeneral rc) {
 		return buildRedissionClient(rc);
 	}

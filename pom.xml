@@ -14,15 +14,6 @@
 	<version>1.0</version>
 
 	<dependencies>
-		<!--
-		<dependency>
-			<groupId>com.yyzs.crypto</groupId>
-			<artifactId>interfaces</artifactId>
-			<version>1.0</version>
-		</dependency>
-		-->
-
-
 
 		<dependency>
 			<groupId>org.redisson</groupId>
@@ -37,42 +28,6 @@
 			<version>4.2.0</version>
 		</dependency>
 
-		<!-- support Java 8 time objects in JSON
-		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-jsr310</artifactId>
-		</dependency>
-		-->
-
-		<!-- measure the behavior of critical components in production environment
-		<dependency>
-			<groupId>io.dropwizard.metrics</groupId>
-			<artifactId>metrics-core</artifactId>
-		</dependency>
-		 -->
-
-		<!-- common codec
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-		</dependency>
-		-->
-
-		<!-- bouncycastle
-		<dependency>
-			<groupId>org.bouncycastle</groupId>
-			<artifactId>bcprov-ext-jdk15on</artifactId>
-			<version>1.55</version>
-		</dependency>
-		-->
-
-		<!-- database connection pool
-		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-		</dependency>
-		-->
-
 		<dependency>
 			<groupId>com.squareup.okhttp3</groupId>
 			<artifactId>okhttp</artifactId>
@@ -83,109 +38,7 @@
 			<artifactId>zkclient</artifactId>
 			<version>0.2</version>
 		</dependency>
-		 <!--
-		<dependency>
-			<groupId>com.yyzs.crypto</groupId>
-			<artifactId>netty-core</artifactId>
-			<version>1.0</version>
-		</dependency>
-		-->
+
 	</dependencies>
 
-
-
-
-
-	<build>
-		<plugins>
-
-			<plugin>
-         	<groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-            	<source>1.8</source>
-            	<target>1.8</target>
-            	<fork>true</fork>
-            	<encoding>UTF-8</encoding>
-            </configuration>
-         </plugin>
-		 <plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-source-plugin</artifactId>
-			<executions>
-				<execution>
-					<id>attach-sources</id>
-					<goals>
-						<goal>jar</goal>
-					</goals>
-				</execution>
-			</executions>
-		</plugin>
-
-			<!-- <plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.2.1</version>
-
-				<configuration>
-					<executable>java</executable>
-					<arguments>
-						<argument>com.cta.codeonline.NettyServer</argument>
-					</arguments>
-				</configuration>
-			</plugin> -->
-
-			<plugin>
-	            <groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-jar-plugin</artifactId>
-	            <configuration>
-	                <archive>
-	                    <manifest>
-	                        <addClasspath>true</addClasspath>
-	                        <classpathPrefix>lib/</classpathPrefix>
-	                        <mainClass>com.cta.codeonline.NettyBootstrap</mainClass>
-	                    </manifest>
-	                </archive>
-	            </configuration>
-	        </plugin>
-	        <plugin>
-	            <groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-dependency-plugin</artifactId>
-	            <executions>
-	                <execution>
-	                    <id>copy-dependencies</id>
-	                    <phase>package</phase>
-	                    <goals>
-	                        <goal>copy-dependencies</goal>
-	                    </goals>
-	                    <configuration>
-	                        <outputDirectory>target/lib</outputDirectory>
-	                    </configuration>
-	                </execution>
-	            </executions>
-	        </plugin>
-
-	        <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<descriptors>
-						<descriptor>assembly.xml</descriptor>
-					</descriptors>
-				</configuration>
-				<executions>
-					<!-- 当执行mvn package时才会打包 -->
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-
-		<finalName>service-core</finalName>
-	</build>
 </project>
