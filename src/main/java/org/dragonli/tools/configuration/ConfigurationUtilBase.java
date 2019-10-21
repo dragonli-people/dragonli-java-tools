@@ -1,21 +1,23 @@
 package org.dragonli.tools.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.bind.Bindable;
 import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.core.env.ConfigurableEnvironment;
-
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 
 public class ConfigurationUtilBase {
 
     protected Binder binder;
 
-    protected @Autowired
-    ConfigurableEnvironment configurableEnvironment;
+    public Binder getBinder() {
+        return binder;
+    }
+
+    public ConfigurableEnvironment getConfigurableEnvironment() {
+        return configurableEnvironment;
+    }
+
+    @Autowired
+    protected ConfigurableEnvironment configurableEnvironment;
     public void init() throws Exception{
         binder = Binder.get(configurableEnvironment);
 
