@@ -43,7 +43,10 @@ public class DataSourceConfigurationUtil extends ConfigurationUtilBase {
             DataSource dataSource = DataSourceBuilder.create().type(clazz).build();
             BindResult<DataSource> result = binder.bind(dataSourceConfigPath, Bindable.ofInstance(dataSource));
             return result.get();
-        }catch (Exception e){}
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.error(e);
+        }
 
         return null;
     }

@@ -1,10 +1,14 @@
 package org.dragonli.tools.configuration;
 
+import org.apache.log4j.Logger;
+import org.dragonli.tools.general.DataCachePool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.core.env.ConfigurableEnvironment;
 
 public class ConfigurationUtilBase {
+
+    protected final Logger logger = Logger.getLogger(getClass());
 
     protected Binder binder;
 
