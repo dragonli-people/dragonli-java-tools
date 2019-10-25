@@ -11,7 +11,7 @@
 	<artifactId>dragonli-java-tools</artifactId>
 	<packaging>jar</packaging>
 	<name>dragonli-java-tools</name>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 
 	<description>dragonli java service tools lib</description>
 	<url>https://github.com/dragonli-people</url>
