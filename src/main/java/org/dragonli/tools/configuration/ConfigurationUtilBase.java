@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.core.env.ConfigurableEnvironment;
 
+import javax.annotation.PostConstruct;
+
 public class ConfigurationUtilBase {
 
     protected final Logger logger = Logger.getLogger(getClass());
@@ -22,6 +24,7 @@ public class ConfigurationUtilBase {
 
     @Autowired
     protected ConfigurableEnvironment configurableEnvironment;
+    @PostConstruct
     public void init() throws Exception{
         binder = Binder.get(configurableEnvironment);
 
